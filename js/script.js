@@ -6,6 +6,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth',
             block: 'start'
         });
+        if (window.innerWidth <= 768) {
+            toggleMenu();
+        }
     });
 });
 
@@ -26,6 +29,17 @@ window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     header.classList.toggle('scrolled', window.scrollY > 50);
 });
+
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+}
+
+hamburger.addEventListener('click', toggleMenu);
 
 // Interactive image hover effects
 const hoverItems = document.querySelectorAll('.highlight-item, .service-item, .step-item, .contact-item');

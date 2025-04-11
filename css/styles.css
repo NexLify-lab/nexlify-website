@@ -15,13 +15,13 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 /* Header */
 header {
     background: linear-gradient(90deg, #1e2a44 0%, #3b4e7a 100%);
-    padding: 30px 0;
+    padding: 20px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -42,11 +42,11 @@ header .container {
 
 .logo a {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 700;
     color: #f4e4bc;
     text-decoration: none;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     transition: color 0.3s ease;
 }
 
@@ -54,13 +54,39 @@ header .container {
     color: #e6b8a2;
 }
 
-nav ul {
+nav .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+nav .hamburger span {
+    width: 30px;
+    height: 3px;
+    background: #f4e4bc;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+nav .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+nav .hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+nav .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+nav ul.nav-menu {
     display: flex;
     list-style: none;
 }
 
 nav ul li {
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 nav ul li a {
@@ -81,7 +107,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     position: relative;
-    padding: 220px 40px 160px;
+    padding: 180px 20px 120px;
     text-align: center;
     overflow: hidden;
 }
@@ -105,18 +131,18 @@ nav ul li a:hover {
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 64px;
+    font-size: 56px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     color: #f4e4bc;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
-    margin-bottom: 60px;
-    max-width: 1000px;
+    margin-bottom: 40px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     color: #e6e9ec;
@@ -126,13 +152,13 @@ nav ul li a:hover {
 
 .cta-button {
     display: inline-block;
-    padding: 18px 60px;
+    padding: 15px 50px;
     background: linear-gradient(45deg, #ff8c94, #ffaaa5);
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     box-shadow: 0 8px 25px rgba(255, 140, 148, 0.4);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -144,15 +170,15 @@ nav ul li a:hover {
 
 /* Section General */
 .section {
-    padding: 160px 40px;
+    padding: 120px 20px;
     position: relative;
 }
 
 .section h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 52px;
+    font-size: 44px;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     text-align: center;
     color: #f4e4bc;
 }
@@ -163,25 +189,23 @@ nav ul li a:hover {
 }
 
 .about p {
-    max-width: 1100px;
-    margin: 0 auto 60px;
+    max-width: 1000px;
+    margin: 0 auto 50px;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     color: #e6e9ec;
     text-align: center;
 }
 
 .about-highlights {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
 }
 
 .highlight-item {
     text-align: center;
-    max-width: 320px;
-    padding: 30px;
+    padding: 25px;
     background: rgba(255, 255, 255, 0.06);
     border-radius: 20px;
     transition: transform 0.4s ease, background 0.4s ease;
@@ -191,7 +215,7 @@ nav ul li a:hover {
 }
 
 .highlight-item:hover {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
     background: rgba(255, 140, 148, 0.1);
 }
 
@@ -221,9 +245,9 @@ nav ul li a:hover {
 }
 
 .highlight-icon {
-    font-size: 40px;
+    font-size: 36px;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #ff8c94;
     transition: transform 0.4s ease;
 }
@@ -233,14 +257,14 @@ nav ul li a:hover {
 }
 
 .highlight-item h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #f4e4bc;
 }
 
 .highlight-item p {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
     color: #e6e9ec;
 }
@@ -252,22 +276,22 @@ nav ul li a:hover {
 
 .services p {
     text-align: center;
-    max-width: 1000px;
-    margin: 0 auto 70px;
-    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    font-size: 16px;
     color: #e6e9ec;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
 .service-item {
-    padding: 50px;
+    padding: 40px;
     background: rgba(255, 255, 255, 0.08);
-    border-radius: 25px;
+    border-radius: 20px;
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -277,8 +301,8 @@ nav ul li a:hover {
 }
 
 .service-item:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .service-item::before {
@@ -307,24 +331,24 @@ nav ul li a:hover {
 }
 
 .service-item h3 {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #f4e4bc;
 }
 
 .service-item p {
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     color: #e6e9ec;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .learn-more {
     color: #ff8c94;
     text-decoration: none;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -340,20 +364,20 @@ nav ul li a:hover {
 
 .process p {
     text-align: center;
-    max-width: 1000px;
-    margin: 0 auto 70px;
-    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    font-size: 16px;
     color: #e6e9ec;
 }
 
 .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
 }
 
 .step-item {
-    padding: 40px;
+    padding: 30px;
     background: rgba(255, 255, 255, 0.06);
     border-radius: 20px;
     transition: transform 0.4s ease;
@@ -396,14 +420,14 @@ nav ul li a:hover {
 }
 
 .step-item h3 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: #f4e4bc;
 }
 
 .step-item p {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
     color: #e6e9ec;
 }
@@ -411,21 +435,21 @@ nav ul li a:hover {
 /* CTA Banner */
 .cta-banner {
     background: linear-gradient(90deg, #ff8c94 0%, #ffaaa5 100%);
-    padding: 120px 40px;
+    padding: 100px 20px;
     text-align: center;
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
 }
 
 .cta-banner h2 {
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .cta-banner p {
     color: #fff;
-    margin-bottom: 60px;
-    font-size: 18px;
-    max-width: 900px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -436,22 +460,21 @@ nav ul li a:hover {
 }
 
 .contact p {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     color: #e6e9ec;
 }
 
 .contact-details {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
 }
 
 .contact-item {
     text-align: center;
-    padding: 30px;
+    padding: 25px;
     background: rgba(255, 255, 255, 0.06);
     border-radius: 20px;
     transition: transform 0.4s ease, background 0.4s ease;
@@ -491,9 +514,9 @@ nav ul li a:hover {
 }
 
 .contact-icon {
-    font-size: 32px;
+    font-size: 30px;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #ff8c94;
     transition: transform 0.4s ease;
 }
@@ -503,7 +526,7 @@ nav ul li a:hover {
 }
 
 .contact-item p, .contact-item a {
-    font-size: 18px;
+    font-size: 16px;
     color: #e6e9ec;
     text-decoration: none;
 }
@@ -515,27 +538,25 @@ nav ul li a:hover {
 /* Footer */
 footer {
     background: #0a1121;
-    padding: 100px 40px;
+    padding: 80px 20px;
     color: #e6e9ec;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
 .footer-section {
-    flex: 1;
-    min-width: 280px;
-    margin: 25px;
+    text-align: center;
 }
 
 .footer-section h4 {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
     color: #f4e4bc;
 }
 
@@ -543,7 +564,7 @@ footer {
     color: #e6e9ec;
     text-decoration: none;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
 }
 
@@ -553,7 +574,7 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     color: #a3bffa;
 }
 
@@ -579,21 +600,135 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 48px;
+    .container {
+        padding: 0 15px;
     }
+
+    header .container {
+        flex-wrap: wrap;
+    }
+
+    nav .hamburger {
+        display: flex;
+    }
+
+    nav ul.nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: rgba(30, 42, 68, 0.95);
+        padding: 20px 0;
+    }
+
+    nav ul.nav-menu.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 140px 15px 80px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
     .hero p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 12px 40px;
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 80px 15px;
+    }
+
+    .section h2 {
+        font-size: 36px;
+    }
+
+    .about p, .services p, .process p, .contact p {
+        font-size: 15px;
+    }
+
+    .cta-banner {
+        padding: 80px 15px;
+    }
+
+    .cta-banner h2 {
+        font-size: 32px;
+    }
+
+    footer {
+        padding: 60px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 28px;
+    }
+
+    .hero {
+        padding: 120px 10px 60px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 60px 10px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .highlight-item, .service-item, .step-item, .contact-item {
+        padding: 20px;
+    }
+
+    .highlight-icon, .contact-icon {
+        font-size: 28px;
+    }
+
+    .highlight-item h3, .service-item h3, .step-item h3 {
+        font-size: 20px;
+    }
+
+    .contact-item p, .contact-item a {
+        font-size: 14px;
+    }
+
+    .footer-section h4 {
         font-size: 18px;
     }
-    nav ul {
-        display: none; /* Add hamburger menu in production */
+
+    .footer-section p, .footer-section a {
+        font-size: 14px;
     }
-    .about-highlights, .services-grid, .process-steps, .contact-details {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+
+    .footer-bottom {
+        font-size: 12px;
     }
 }
